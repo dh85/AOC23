@@ -3,7 +3,7 @@ func day01Part1(input: String) -> Int {
 }
 
 func day01Part2(input: String) -> Int {
-  process(input: transform(input: input))
+  process(input: transformed(input: input))
 }
 
 private func process(input: String) -> Int {
@@ -15,7 +15,7 @@ private func process(input: String) -> Int {
     .sum()
 }
 
-private func transform(input: String) -> String {
+private func transformed(input: String) -> String {
   let numberMappings = [
     "one": "one1one",
     "two": "two2two",
@@ -27,6 +27,5 @@ private func transform(input: String) -> String {
     "eight": "eight8eight",
     "nine": "nine9nine",
   ]
-
   return numberMappings.reduce(input) { $0.replacingOccurrences(of: $1.0, with: $1.1) }
 }
